@@ -1,0 +1,37 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:shopping_app/consts/colors.dart';
+import 'package:shopping_app/consts/string.dart';
+import 'package:shopping_app/consts/style.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+Widget customTextField({String? title,String? hint,controller,isPass}){
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      title!.text.color(redColor).fontFamily(semibold).size(16).make(),
+      5.heightBox,
+      TextFormField(
+        obscureText: isPass,
+        controller: controller,
+        decoration: InputDecoration(
+          hintStyle: TextStyle(
+            fontFamily: semibold,
+            color: textfieldGrey
+          ),
+          hintText: hint,
+          isDense: true,
+          fillColor: lightGrey,
+          filled: true,
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.red
+            )
+          )
+        ),
+      ),
+      5.heightBox
+    ],
+  );
+}
